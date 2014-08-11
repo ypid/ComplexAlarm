@@ -2,10 +2,10 @@
 <!-- Translation by Ilija Milicevic <engr3337@gmail.com> -->
 <resources>
   <string name="app_name">ComplexAlarm</string>
-  <string name="add_alarm">Agregar alarma...</string>
-  <string name="default_settings">Opciones de alarma por defecto...</string>
-  <string name="app_settings">Ajuste de aplicaciones...</string>
-  <string name="delete_all">Borrar todo...</string>
+  <string name="add_alarm">Agregar alarma…</string>
+  <string name="default_settings">Opciones de alarma por defecto…</string>
+  <string name="app_settings">Ajuste de aplicaciones…</string>
+  <string name="delete_all">Borrar todo…</string>
   <string name="settings">Ajustes</string>
   <string name="time">Hora</string>
   <string name="label">Nombre</string>
@@ -27,7 +27,7 @@
   <string name="volume_duration">Duracion de alarma en aumento (segundos)</string>
   <string name="ok">OK</string>
   <string name="cancel">Cancelar</string>
-  <string name="delete">Borrar...</string>
+  <string name="delete">Borrar…</string>
   <string name="confirm_delete">Confirma borrado?</string>
   <string name="snooze">SNOOZE</string>
   <string name="dismiss">DESCARTAR</string>
@@ -75,7 +75,7 @@
   <string name="lock_screen_countdown">Cuenta regresiva</string>
   <string name="lock_screen_time">Hora de alarma</string>
   <string name="lock_screen_both">Ambos</string>
-  <string name="lock_screen_custom">Personalizado...</string>
+  <string name="lock_screen_custom">Personalizado…</string>
   <string name="lock_screen_nothing">Nada</string>
   <string name="internal">Internos</string>
   <string name="artists">Artistas</string>
