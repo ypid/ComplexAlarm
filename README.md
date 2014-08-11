@@ -2,7 +2,7 @@
 
 ## Credits
 
-* Initial strings where imported from [Alarm Klock](https://code.google.com/p/kraigsandroid/), which is licensed under Apache License 2.0.
+* Used [Alarm Klock](https://code.google.com/p/kraigsandroid/) as reference implementation, which is licensed under Apache License 2.0.
 
 ## License
 

@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class AlarmList extends ActionBarActivity {
+public class ActivityAlarmList extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +22,23 @@ public class AlarmList extends ActionBarActivity {
         return true;
     }
 
+    public void onAlarmAddClick(View view) {
+        startActivity(new Intent(this, ActivityAlarmAdd.class));
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        switch (item.getItemId()) {
+        case R.id.action_add_alarm:
+            startActivity(new Intent(this, ActivityAlarmAdd.class));
             return true;
+        case R.id.action_settings:
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
-    }
-    
-    public void alarmAdd(View view) {
-        startActivity(new Intent(this, ActivityAlarmAdd.class));
     }
 }

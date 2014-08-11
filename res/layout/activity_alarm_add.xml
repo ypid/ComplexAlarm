@@ -2,15 +2,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
 
-    <EditText android:id="@+id/edit_alarm"
-        android:layout_height="0dp"
-        android:layout_width="fill_parent"
+    <EditText
+        android:id="@+id/edit_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:inputType="text"
-        android:hint="@string/edit_alarm" />
+        android:hint="@string/edit_alarm"
+        android:inputType="text" >
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/btnCheck"
+            android:layout_toLeftOf="@+id/btnCheck"
+            android:onClick="onCancelClick"
+            android:text="@android:string/cancel" />
+
+        <Button
+            android:id="@+id/btnCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/btnSaveAlarm"
+            android:layout_toLeftOf="@+id/btnSaveAlarm"
+            android:text="@string/check_value" />
+
+        <Button
+            android:id="@+id/btnSaveAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/save_alarm" />
+
+    </RelativeLayout>
 
 </LinearLayout>

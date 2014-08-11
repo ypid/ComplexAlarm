@@ -89,4 +89,6 @@
     <string name="time_out_error">WARNING: This alarm has timed out waiting for an acknowledgment.</string>
     <string name="time_out_summary">A firing alarm will be automatically dismissed after this many minutes.</string>
     <string name="edit_alarm">Enter your alarm value here.</string>
+    <string name="save_alarm">Save alarm</string>
+    <string name="check_value">Check value</string>
 </resources>
