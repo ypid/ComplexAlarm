@@ -1,28 +1,37 @@
 package com.github.ypid.complexalarm;
 
-import android.support.v7.app.ActionBarActivity;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 
-public class ActivityAlarmAdd extends ActionBarActivity {
+public class OpeningHoursWebView extends ActionBarActivity {
+    private static final String DEFAULT_OH_VALUE = "Fr-Sa 18:00-06:30";
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm_add);
-        Log.d(getResources().getString(R.string.app_name), "Loading up opening_hours.js");
-        OpeningHours oh = new OpeningHours();
-        oh.loadOpeningHours(getApplicationContext());
-        Intent intent = new Intent(this, OpeningHoursWebView.class);
-        intent.putExtra("oh_value", "Fr-Sa 18:00-06:40");
-        // intent.putExtra("oh_mode", 0);
-        startActivity(intent);
+
+        WebView mWebView = new WebView(this);
+        Bundle extras = getIntent().getExtras();
+        String oh_value = DEFAULT_OH_VALUE;
+        int oh_mode = 0;
+        if (extras != null) {
+            oh_mode = extras.getInt("oh_mode");
+            oh_value = extras.getString("oh_value");
+            if (oh_value == null) {
+                oh_value = DEFAULT_OH_VALUE;
+            }
+        }
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl("file:///android_asset/javascript-libs/opening_hours/demo.html"
+                + "?EXP=" + EncodingUtil.encodeURIComponent(oh_value)
+                + "&mode=" + oh_mode);
+        setContentView(mWebView);
     }
 
     @Override
@@ -31,7 +40,7 @@ public class ActivityAlarmAdd extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.alarm_add, menu);
         return true;
     }
-    
+
     public void onCancelClick(View view) {
         finish();
     }

@@ -26,6 +26,10 @@
             android:name=".ActivityAlarmAdd"
             android:label="@string/add_alarm" >
         </activity>
+        <activity
+            android:name=".OpeningHoursWebView"
+            android:label="@string/opening_hours_web_view" >
+        </activity>
     </application>
 
 </manifest>

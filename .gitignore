@@ -1,3 +1,6 @@
+# ComplexAlarm specific
+assets/javascript-libs
+
 # Built application files
 *.apk
 *.ap_
