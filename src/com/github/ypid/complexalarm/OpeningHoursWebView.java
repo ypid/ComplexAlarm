@@ -1,12 +1,21 @@
 package com.github.ypid.complexalarm;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+
+/*
+ * Usage example:      
+        Intent intent = new Intent(this, OpeningHoursWebView.class);
+        intent.putExtra("oh_value", "Fr-Sa 18:00-06:40");
+        // intent.putExtra("oh_mode", 0);
+        startActivity(intent);
+ */
 
 public class OpeningHoursWebView extends ActionBarActivity {
     private static final String DEFAULT_OH_VALUE = "Fr-Sa 18:00-06:30";

@@ -1,6 +1,6 @@
 # ComplexAlarm
 
-Alarm Clock application for Android taken to the extrem based on the [opening_hours syntax][oh:specification]. Set your alarms *exactly* the way you want to.
+Alarm clock application for Android taken to the extrem based on the [opening_hours syntax][oh:specification]. Set your alarms *exactly* the way you want to.
 
 ## State of the application
 
@@ -8,9 +8,9 @@ This application is currently in a pre-alpha state meaning that the basic featur
 
 ## Why do I want to use this?
 
-You might consider using this application if you have tried out all the Alarm applications out there but you always missed certain features to customize your alarms.
+You might consider using this application if you have tried out all the alarm clock applications out there but you always missed certain features to customize your alarms.
 
-I can pretty much promise you (although I have only tested a few Alarm applications) that this application is the most powerful alarm application out there. Unfortunately, you do not get all this power for free. You will have to express your alarms in a certain syntax as described below.
+I can pretty much promise you (although I have only tested a few alarm clock applications) that this application is the most powerful alarm clock application out there. Unfortunately, you do not get all this power for free. You will have to express your alarms in a certain syntax as described below.
 
 ## Example alarm times
 
@@ -50,7 +50,7 @@ There are a few reasons why I wrote this thing:
 ## Credits
 
 * Used [Alarm Klock](https://code.google.com/p/kraigsandroid/) as reference implementation, which is licensed under Apache License 2.0.
-* The [application icon](ic_launcher-web.png) is based on [Zahnrad. / Gear.](https://secure.flickr.com/photos/stefan-w/3337070623) by [Stefan W.](https://secure.flickr[com/photos/stefan-w/). I cropped the picture and added the letters ["C", "A"] which stands for ComplexAlarm. Both the original and this modification are under [Creative Commons Attribution 2.0 Generic (CC BY 2.0)](https://creativecommons.org/licenses/by/2.0/).
+* The [application icon](ic_launcher-web.png) is based on [Zahnrad. / Gear.](https://secure.flickr.com/photos/stefan-w/3337070623) by [Stefan W.](https://secure.flickr[com/photos/stefan-w/). I cropped the picture and added the letters ["C", "A"] which stand for ComplexAlarm. Both the original and this modification are under [Creative Commons Attribution 2.0 Generic (CC BY 2.0)](https://creativecommons.org/licenses/by/2.0/).
 
 ## Author
 

@@ -4,19 +4,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
 import com.evgenii.jsevaluator.JsEvaluator;
+import com.evgenii.jsevaluator.JsFunctionCallFormatter;
 import com.evgenii.jsevaluator.interfaces.JsCallback;
 
+/*
+ * Simple wrapper for the API documented here:
+ * https://github.com/ypid/opening_hours.js#library-api 
+ */
 public class OpeningHours {
-    JsEvaluator     mJsEvaluator;
+    private JsEvaluator mJsEvaluator;
     private Scanner scanner;
 
-    protected String getFileContent(String fileName, Context context) throws IOException {
+    private String getFileContent(String fileName, Context context) throws IOException {
         final AssetManager am = context.getAssets();
         final InputStream inputStream = am.open(fileName);
 
@@ -33,26 +37,40 @@ public class OpeningHours {
         return null;
     }
 
-    protected void loadOpeningHours(Context context) {
+    protected OpeningHours(Context context) {
         Log.d("OpeningHours", "Loading up opening_hours.js");
         mJsEvaluator = new JsEvaluator(context);
-        final String librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.js", context);
+        String librarySrouce = loadJs("javascript-libs/suncalc/suncalc.js", context);
         mJsEvaluator.evaluate(librarySrouce);
-
-        final String code = "var crashed = true;" +
-        		"try {" +
-        		"    oh = new opening_hours(value, nominatiomTestJSON);" +
-        		"    warnings = oh.getWarnings();" +
+        librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.js", context);
+        // mJsEvaluator.evaluate(librarySrouce);
+    }
+    
+    protected void evalOpeningHours(String value, String nominatiomJSON, byte oh_mode) {
+        String ohConstructorCall = JsFunctionCallFormatter.toString("opening_hours", value, nominatiomJSON, oh_mode);
+        Log.d("OpeningHours constructor", ohConstructorCall);
+        final String code = "var oh, warnings, crashed = true;" +
+                "try {" +
+                "    oh = new " + ohConstructorCall + ";" +
+                "    warnings = oh.getWarnings();" +
                 "    crashed = false;" +
-        		"} catch(err) {" +
-        		"    crashed = err;" +
-        		"}";
-
-        mJsEvaluator.evaluate(code, new JsCallback() {
+                "} catch(err) {" +
+                "    crashed = err;" +
+                "}" +
+               // "crashed.toString();" +
+                "opening_hours;";
+        
+        mJsEvaluator.evaluate("\"test\";", new JsCallback() {
             @Override
             public void onResult(final String resultValue) {
                 Log.d("OpeningHours", String.format("Result: %s", resultValue));
             }
         });
+    }
+    protected void evalOpeningHours(String value, String nominatiomJSON) {
+        evalOpeningHours(value, nominatiomJSON, (byte)0);
+    }
+    protected void evalOpeningHours(String value) {
+        evalOpeningHours(value, "{}");
     }
 }
