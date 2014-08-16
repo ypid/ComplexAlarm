@@ -18,6 +18,7 @@ public class ActivityAlarmList extends ActionBarActivity {
         Log.d(getResources().getString(R.string.app_name), "Loading up opening_hours.js");
         OpeningHours oh = new OpeningHours(getApplicationContext());
         oh.evalOpeningHours("Fr-Sa 18:00-(sunrise+02:00)");
+        oh.evalOpeningHours("PH");
     }
 
     @Override

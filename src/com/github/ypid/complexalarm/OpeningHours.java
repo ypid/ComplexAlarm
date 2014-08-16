@@ -18,6 +18,7 @@ import com.evgenii.jsevaluator.interfaces.JsCallback;
  */
 public class OpeningHours {
     private JsEvaluator mJsEvaluator;
+    final private String nominatiomTestJSONString = "{\"place_id\":\"44651229\",\"licence\":\"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright\",\"osm_type\":\"way\",\"osm_id\":\"36248375\",\"lat\":\"49.5400039\",\"lon\":\"9.7937133\",\"display_name\":\"K 2847, Lauda-K\u00f6nigshofen, Main-Tauber-Kreis, Regierungsbezirk Stuttgart, Baden-W\u00fcrttemberg, Germany, European Union\",\"address\":{\"road\":\"K 2847\",\"city\":\"Lauda-K\u00f6nigshofen\",\"county\":\"Main-Tauber-Kreis\",\"state_district\":\"Regierungsbezirk Stuttgart\",\"state\":\"Baden-W\u00fcrttemberg\",\"country\":\"Germany\",\"country_code\":\"de\",\"continent\":\"European Union\"}}";
     private Scanner scanner;
 
     private String getFileContent(String fileName, Context context) throws IOException {
@@ -41,23 +42,24 @@ public class OpeningHours {
         Log.d("OpeningHours", "Loading up opening_hours.js");
         mJsEvaluator = new JsEvaluator(context);
         String librarySrouce = loadJs("javascript-libs/suncalc/suncalc.min.js", context);
-        // mJsEvaluator.evaluate(librarySrouce);
+        mJsEvaluator.evaluate(librarySrouce);
         librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.min.js", context);
         mJsEvaluator.evaluate(librarySrouce);
     }
     
     protected void evalOpeningHours(String value, String nominatiomJSON, byte oh_mode) {
-        String ohConstructorCall = JsFunctionCallFormatter.toString("opening_hours", value, nominatiomJSON, oh_mode);
+        String ohConstructorCall = "new opening_hours('" + value + "', JSON.parse('" + nominatiomJSON + "'), " + oh_mode + ")";
         Log.d("OpeningHours constructor", ohConstructorCall);
         final String code = "var oh, warnings, crashed = true;" +
                 "try {" +
-                "    oh = new " + ohConstructorCall + ";" +
-                // "    warnings = oh.getWarnings();" +
+                "    oh = " + ohConstructorCall + ";" +
+                "    warnings = oh.getWarnings();" +
                 "    crashed = false;" +
                 "} catch(err) {" +
                 "    crashed = err;" +
                 "}" +
                 "oh.getNextChange().toString();" +
+                //"crashed.toString();" +
                 "";
         
         mJsEvaluator.evaluate(code, new JsCallback() {
@@ -71,6 +73,7 @@ public class OpeningHours {
         evalOpeningHours(value, nominatiomJSON, (byte)0);
     }
     protected void evalOpeningHours(String value) {
-        evalOpeningHours(value, "{}");
+        // evalOpeningHours(value, "{}");
+        evalOpeningHours(value, nominatiomTestJSONString); // FIXME testing only
     }
 }
