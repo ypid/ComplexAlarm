@@ -3,6 +3,7 @@ package com.github.ypid.complexalarm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,10 @@ public class ActivityAlarmList extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_list);
+
+        Log.d(getResources().getString(R.string.app_name), "Loading up opening_hours.js");
+        OpeningHours oh = new OpeningHours(getApplicationContext());
+        oh.evalOpeningHours("Fr-Sa 18:00-(sunrise+02:00)");
     }
 
     @Override

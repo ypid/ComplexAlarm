@@ -41,9 +41,9 @@ public class OpeningHours {
         Log.d("OpeningHours", "Loading up opening_hours.js");
         mJsEvaluator = new JsEvaluator(context);
         String librarySrouce = loadJs("javascript-libs/suncalc/suncalc.min.js", context);
-        mJsEvaluator.evaluate(librarySrouce);
-        librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.min.js", context);
         // mJsEvaluator.evaluate(librarySrouce);
+        librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.min.js", context);
+        mJsEvaluator.evaluate(librarySrouce);
     }
     
     protected void evalOpeningHours(String value, String nominatiomJSON, byte oh_mode) {
@@ -52,19 +52,15 @@ public class OpeningHours {
         final String code = "var oh, warnings, crashed = true;" +
                 "try {" +
                 "    oh = new " + ohConstructorCall + ";" +
-                "    warnings = oh.getWarnings();" +
+                // "    warnings = oh.getWarnings();" +
                 "    crashed = false;" +
                 "} catch(err) {" +
                 "    crashed = err;" +
                 "}" +
-               // "crashed.toString();" +
-                "opening_hours;";
+                "oh.getNextChange().toString();" +
+                "";
         
-        final String suncalcTest = "var times = SunCalc.getTimes(new Date(), 51.5, -0.1);" +
-        		"var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes();" +
-        		"sunriseStr;";
-        
-        mJsEvaluator.evaluate(suncalcTest, new JsCallback() {
+        mJsEvaluator.evaluate(code, new JsCallback() {
             @Override
             public void onResult(final String resultValue) {
                 Log.d("OpeningHours", String.format("Result: %s", resultValue));
