@@ -2,8 +2,10 @@ all: download-dependencies
 
 .PHONY: all download-dependencies
 
-download-dependencies: libs/jsevaluator.jar assets/javascript-libs/suncalc
-	$(MAKE) -C "assets/javascript-libs"
+download-dependencies: libs/jsevaluator.jar assets/javascript-libs/suncalc assets/javascript-libs/opening_hours
+
+assets/javascript-libs/opening_hours:
+	npm install suncalc
 
 assets/javascript-libs/suncalc:
 	npm install suncalc

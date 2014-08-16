@@ -40,9 +40,9 @@ public class OpeningHours {
     protected OpeningHours(Context context) {
         Log.d("OpeningHours", "Loading up opening_hours.js");
         mJsEvaluator = new JsEvaluator(context);
-        String librarySrouce = loadJs("javascript-libs/suncalc/suncalc.js", context);
+        String librarySrouce = loadJs("javascript-libs/suncalc/suncalc.min.js", context);
         mJsEvaluator.evaluate(librarySrouce);
-        librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.js", context);
+        librarySrouce = loadJs("javascript-libs/opening_hours/opening_hours.min.js", context);
         // mJsEvaluator.evaluate(librarySrouce);
     }
     
@@ -60,7 +60,11 @@ public class OpeningHours {
                // "crashed.toString();" +
                 "opening_hours;";
         
-        mJsEvaluator.evaluate("\"test\";", new JsCallback() {
+        final String suncalcTest = "var times = SunCalc.getTimes(new Date(), 51.5, -0.1);" +
+        		"var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes();" +
+        		"sunriseStr;";
+        
+        mJsEvaluator.evaluate(suncalcTest, new JsCallback() {
             @Override
             public void onResult(final String resultValue) {
                 Log.d("OpeningHours", String.format("Result: %s", resultValue));
