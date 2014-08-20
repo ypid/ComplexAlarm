@@ -19,6 +19,10 @@ public class ActivityAlarmList extends ActionBarActivity {
         OpeningHours oh = new OpeningHours(getApplicationContext());
         oh.evalOpeningHours("Fr-Sa 18:00-(sunrise+02:00)");
         oh.evalOpeningHours("PH");
+        oh.evalOpeningHours("easter: open \"Around easter\"");
+        Log.d("OpeningHourss", String.format("date: %s", oh.getDate()));
+        Log.d("OpeningHoursretrun", String.format("date: %s", oh.returnDate()));
+        
     }
 
     @Override
