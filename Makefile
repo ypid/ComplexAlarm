@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 all: download-dependencies
 
 .PHONY: all download-dependencies
@@ -15,3 +17,8 @@ assets/javascript-libs/suncalc/suncalc.min.js: assets/javascript-libs/suncalc/su
 
 libs/jsevaluator.jar:
 	wget 'https://github.com/evgenyneu/js-evaluator-for-android/raw/master/JSEvaluator/bin/jsevaluator.jar' -O 'libs/jsevaluator.jar'
+
+.SILENT: getStringsFiles
+.PHONY:  getStringsFiles
+getStringsFiles:
+	rsync ../Alarm_Klock/android/alarmclock/res/ res --include='*/' --include='strings.xml' --include='arrays.xml' --exclude='*' -va
