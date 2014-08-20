@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cm_app_name">ComplexAlarm</string>
+    <string name="edit_alarm">Enter your alarm value here.</string>
+    <string name="save_alarm">Save alarm</string>
+    <string name="check_value">Check value</string>
+    <string name="opening_hours_web_view">FIXME</string>
+</resources>
