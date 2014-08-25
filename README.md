@@ -49,7 +49,7 @@ There are a few reasons why I wrote this thing:
 
 ## Credits
 
-* Used [Alarm Klock](https://code.google.com/p/kraigsandroid/) as reference implementation, which is licensed under Apache License 2.0.
+* Used [Alarm Klock](https://code.google.com/p/kraigsandroid/) as reference implementation and reused most of it, which is licensed under Apache License 2.0. Any improvements will be contributed back under Apache License 2.0.
 * The [application icon](ic_launcher-web.png) is based on [Zahnrad. / Gear.](https://secure.flickr.com/photos/stefan-w/3337070623) by [Stefan W.](https://secure.flickr[com/photos/stefan-w/). I cropped the picture and added the letters ["C", "A"] which stand for ComplexAlarm. Both the original and this modification are under [Creative Commons Attribution 2.0 Generic (CC BY 2.0)](https://creativecommons.org/licenses/by/2.0/).
 
 ## Author
