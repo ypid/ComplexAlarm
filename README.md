@@ -44,7 +44,7 @@ If you really know the syntax you can even do stuff like this example. Assume yo
 
 * Wake me on Saturday one hour before sunrise if that is after 07:00 else wake me 07:00.
 
-[Sa 07:00; (sunrise-05:00)-(sunrise-01:00) off, Sa (sunrise-01:00); 00:00-07:00 off](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Sa%2007%3A00%3B%20%28sunrise-05%3A00%29-%28sunrise-01%3A00%29%20off%2C%20Sa%20%28sunrise-01%3A00%29%3B%2000%3A00-07%3A00%20off&DATE=1418451240000&lat=48.8769&lon=7.1844&mode=2)
+[`Sa 07:00; (sunrise-05:00)-(sunrise-01:00) off, Sa (sunrise-01:00); 00:00-07:00 off`](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Sa%2007%3A00%3B%20%28sunrise-05%3A00%29-%28sunrise-01%3A00%29%20off%2C%20Sa%20%28sunrise-01%3A00%29%3B%2000%3A00-07%3A00%20off&DATE=1418451240000&lat=48.8769&lon=7.1844&mode=2)
 
 <!-- Sa 07:00 open "sunrise would be too early …"; (sunrise-05:00)-(sunrise-01:00) off, Sa (sunrise-01:00) open "get up, the sun is about to show up"; 00:00-07:00 off -->
 
