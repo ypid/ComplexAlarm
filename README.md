@@ -24,6 +24,8 @@ For example you can define your alarms as follows:
 
 This can be expressed in the [opening_hours syntax][oh:specification] as [`Mo-We 07:00; Th,Fr 05:45; Mo[1] 07:30; SH Mo-Fr (sunrise+03:00); PH off`](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Mo-We%2007%3A00%3B%20Th%2CFr%2005%3A45%3B%20Mo[1]%2007%3A30%3B%20SH%20Mo-Fr%20%28sunrise%2B03%3A00%29%3B%20PH%20off&DATE=1401314460000&lat=48.7769&lon=9.1844&mode=1).
 
+---------------------------------------
+
 But we are just getting started ;) Consider the following, slightly advancer definition:
 
 * Monday till Wednesday: 07:00
@@ -35,6 +37,18 @@ But we are just getting started ;) Consider the following, slightly advancer def
 * No alarms on public holidays
 
 This can be expressed as [`Mo-We 07:00; Th 05:45; week 1-53/2 Fr 07:05; week 2-53/2 Fr 05:45; SH Mo-Fr (sunrise+03:00); PH off`](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Mo-We%2007%3A00%3B%20Th%2005%3A45%3B%20week%201-53%2F2%20Fr%2007%3A05%3B%20week%202-53%2F2%20Fr%2005%3A45%3B%20SH%20Mo-Fr%20%28sunrise%2B03%3A00%29%3B%20PH%20off&DATE=1411390920000&lat=48.7769&lon=9.1844&mode=1).
+
+---------------------------------------
+
+If you really know the syntax you can even do stuff like this example. Assume you enjoy jogging in the morning and you really like to see the sunrise when you are jogging around the sea but on the other hand you don‘t want to get up too early. So you have agreed on the following trade-off. You get out to see the sunrise if that does not result in getting woken up before 07:00 (remember, it is Saturday ;) ). If you had to stand up before 07:00 to still see the sunrise you rather lay in bed until 07:00. This is what the following values does express …
+
+* Wake me on Saturday one hour before sunrise if that is after 07:00 else wake me 07:00.
+
+[Sa 07:00; (sunrise-05:00)-(sunrise-01:00) off, Sa (sunrise-01:00); 00:00-07:00 off](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Sa%2007%3A00%3B%20%28sunrise-05%3A00%29-%28sunrise-01%3A00%29%20off%2C%20Sa%20%28sunrise-01%3A00%29%3B%2000%3A00-07%3A00%20off&DATE=1418451240000&lat=48.8769&lon=7.1844&mode=2)
+
+<!-- Sa 07:00 open "sunrise would be too early …"; (sunrise-05:00)-(sunrise-01:00) off, Sa (sunrise-01:00) open "get up, the sun is about to show up"; 00:00-07:00 off -->
+
+---------------------------------------
 
 And last but not least, you could additionally enter the dates where an alarm is not wanted:
 
