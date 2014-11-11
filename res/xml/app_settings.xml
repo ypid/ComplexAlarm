@@ -23,7 +23,7 @@
     android:summary="@string/time_out_summary"
     android:entries="@array/time_out_types"
     android:entryValues="@array/time_out_values"
-    android:defaultValue="10" />
+    android:defaultValue="60" />
 
   <ListPreference android:persistent="true"
     android:key="DEBUG_MODE"
