@@ -26,7 +26,7 @@ This can be expressed in the [opening_hours syntax][oh:specification] as [`Mo-We
 
 ---------------------------------------
 
-But we are just getting started ;) Consider the following, slightly advancer definition:
+But we are just getting started ;) Consider the following, slightly advanced definition:
 
 * Monday till Wednesday: 07:00
 * Thursday: 05:45
@@ -55,7 +55,7 @@ And last but not least, you could additionally enter the dates where an alarm is
 * Do not alarm in the four days around easter.
 * Do not alarm in my vacations. Example 2014 Sep 1-2014 Sep 7
 
-This can be expressed as [`Mo-We 07:00; Th 05:45; week 1-53/2 Fr 07:05; week 2-53/2 Fr 05:45; SH Mo-Fr (sunrise+03:00); PH off; easter -2 days-easter +2 days off "My little break from work every year."; 2014 Sep 1-2014 Sep 7 off "My vacations …"`](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Mo-We%2007%3A00%3B%20Th%2005%3A45%3B%20week%201-53%2F2%20Fr%2007%3A05%3B%20week%202-53%2F2%20Fr%2005%3A45%3B%20SH%20Mo-Fr%20%28sunrise%2B03%3A00%29%3B%20PH%20off%3B%20easter%20-2%20days-easter%20%2B2%20days%20off%20%22My%20little%20break%20from%20work%20every%20year.%22%3B%202014%20Sep%201-2014%20Sep%207%20off%20%22My%20vacations%20%E2%80%A6%22&DATE=1459198860000&lat=48.7769&lon=9.1844&mode=1).
+[`Mo-We 07:00; Th 05:45; week 1-53/2 Fr 07:05; week 2-53/2 Fr 05:45; SH Mo-Fr (sunrise+03:00); PH off; easter -2 days-easter +2 days off "My little break from work every year."; 2014 Sep 1-2014 Sep 7 off "My vacations …"`](http://openingh.openstreetmap.de/evaluation_tool/?EXP=Mo-We%2007%3A00%3B%20Th%2005%3A45%3B%20week%201-53%2F2%20Fr%2007%3A05%3B%20week%202-53%2F2%20Fr%2005%3A45%3B%20SH%20Mo-Fr%20%28sunrise%2B03%3A00%29%3B%20PH%20off%3B%20easter%20-2%20days-easter%20%2B2%20days%20off%20%22My%20little%20break%20from%20work%20every%20year.%22%3B%202014%20Sep%201-2014%20Sep%207%20off%20%22My%20vacations%20%E2%80%A6%22&DATE=1459198860000&lat=48.7769&lon=9.1844&mode=1).
 
 ## Features
 
@@ -95,7 +95,7 @@ This work is released under GPLv3.
 
 
 [OSM-wiki]: https://wiki.openstreetmap.org
-[oh:specification]: https://wiki.openstreetmap.org/wiki/Key:opening_hours:specification
-[oh:specification:holiday_type]: https://wiki.openstreetmap.org/wiki/Key:opening_hours:specification#holiday_type
-[oh:specification:variable_date]: https://wiki.openstreetmap.org/wiki/Key:opening_hours:specification#variable_date
-[oh:specification:event]: https://wiki.openstreetmap.org/wiki/Key:opening_hours:specification#event
+[oh:specification]: https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification
+[oh:specification:holiday_type]: https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification#holiday_type
+[oh:specification:variable_date]: https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification#variable_date
+[oh:specification:event]: https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification#event
