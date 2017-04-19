@@ -40,7 +40,7 @@ This can be expressed as [`Mo-We 07:00; Th 05:45; week 1-53/2 Fr 07:05; week 2-5
 
 ---------------------------------------
 
-If you really know the syntax you can even do stuff like this example. Assume you enjoy jogging in the morning and you really like to see the sunrise when you are jogging around the sea but on the other hand you don‘t want to get up too early. So you have agreed on the following trade-off. You get out to see the sunrise if that does not result in getting woken up before 07:00 (remember, it is Saturday ;) ). If you had to stand up before 07:00 to still see the sunrise you rather lay in bed until 07:00. This is what the following value does express …
+If you really know the syntax you can even do stuff like this example. Assume you enjoy jogging every Saturday morning and you really like to see the sunrise when you are jogging around the sea but on the other hand you don‘t want to get up too early. So you have agreed on the following trade-off. You get out to see the sunrise if that does not result in getting woken up before 07:00 (remember, it is Saturday ;) ). If you had to stand up before 07:00 to still see the sunrise you rather lay in bed until 07:00. This is what the following value does express …
 
 * Wake me on Saturday one hour before sunrise if that is after 07:00 else wake me 07:00.
 
